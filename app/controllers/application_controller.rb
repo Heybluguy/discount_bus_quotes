@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path if !current_user
   end
 
+  def current_admin?
+    current_user && current_user.admin?
+  end
+
 end
