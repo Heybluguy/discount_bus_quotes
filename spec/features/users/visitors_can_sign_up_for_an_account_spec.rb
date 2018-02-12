@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'as a user i can see an option to sign up' do
+describe 'as a visitor i can see an option to sign up' do
   describe 'when i am on the root path' do
-    scenario 'i can sign up with a username and password' do
+    scenario 'i can sign up with a email and password' do
       visit '/'
 
       click_on "Sign Up to Be a User"

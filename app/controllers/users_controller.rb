@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_user, only: [:show]
 
   def new
     @user = User.new
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
     private
