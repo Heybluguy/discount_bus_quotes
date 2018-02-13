@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'as a logged in user' do
   describe 'when i am on the new company path' do
     scenario 'i see a form for creating a new company' do
+      state = State.create!(name: "Florida")
       user = create(:user)
 
       visit new_user_company_path(user)
@@ -12,10 +13,11 @@ describe 'as a logged in user' do
       fill_in "company[email]",	with: "fct@mail.com"
       fill_in "company[website]",	with: "firstclasstransportation.com"
       fill_in "company[description]",	with: "transportation for all"
+      select("Florida", :from => "company[states]")
       attach_file('company[image]', "./spec/data/image.jpeg")
-
       click_on "Create Company"
 
+      expect(current_path).to eq(user_companies_path(user))
       expect(page).to have_content("firstclass transportation")
       expect(page).to have_content("904-964-504")
       expect(page).to have_content("fct@mail.com")

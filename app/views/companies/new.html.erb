@@ -3,6 +3,7 @@
 <%= form_for [:user, @company], html: {multipart: true} do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
+  <%= collection_select :company, :states, State.all, :id, :name %><br>
   <%= f.label :phone %><br>
   <%= f.text_field :phone %><br>
   <%= f.label :email %><br>
