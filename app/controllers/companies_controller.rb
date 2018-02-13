@@ -15,8 +15,8 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @companies = @user.companies
+    @user = current_user
+    @companies = current_user.companies
   end
 
   def edit
