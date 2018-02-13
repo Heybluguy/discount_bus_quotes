@@ -5,6 +5,7 @@ describe 'as a logged in user' do
     scenario 'i see a form for creating a new company' do
       state = State.create!(name: "Florida")
       user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit new_user_company_path(user)
 
