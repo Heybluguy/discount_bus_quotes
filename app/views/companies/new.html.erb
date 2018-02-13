@@ -1,0 +1,17 @@
+<h3>New Company</h3>
+
+<%= form_for [@user, @company], html: {multipart: true} do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :phone %><br>
+  <%= f.text_field :phone %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label :website %><br>
+  <%= f.text_field :website %><br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br>
+  <%= f.label :image, "Attach an Image" %><br />
+  <%= f.file_field :image %><br>
+  <%= f.submit %>
+<% end %>

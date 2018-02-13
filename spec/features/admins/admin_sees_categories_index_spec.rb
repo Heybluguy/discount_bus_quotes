@@ -3,7 +3,9 @@ require 'rails_helper'
 describe 'User visits categories index page' do
   describe 'as admin' do
     scenario 'allows admin to see all categories' do
-      admin = User.create(email: "Ironman@mail.com", password: "boom", role: 1)
+      admin = User.create(email: "Ironman@mail.com",
+                          password: "boom",
+                          role: 1)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
