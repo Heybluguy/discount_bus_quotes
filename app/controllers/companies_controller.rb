@@ -36,6 +36,13 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
+  def destroy
+    @user = current_user
+    company = Company.find(params[:id])
+    company.delete
+    redirect_to user_companies_path(@user)
+  end
+
 
 
     private

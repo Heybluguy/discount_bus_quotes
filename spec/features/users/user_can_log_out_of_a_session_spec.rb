@@ -3,9 +3,7 @@ require 'rails_helper'
 describe 'as a user' do
   describe 'when i am logged in' do
     scenario 'i can log out when i click on a logout button' do
-      user = User.create!(name: "Peter Parker",
-                          email: "Webhead@yahoo.com",
-                          password: "uncle Ben")
+      user = create(:user)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
