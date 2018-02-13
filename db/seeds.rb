@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+State.delete_all
+CSV.foreach("./db/data/states.csv", headers: true) do |row|
+  state = State.create(name: row[1])
+  puts "Created #{state.name}"
+end
