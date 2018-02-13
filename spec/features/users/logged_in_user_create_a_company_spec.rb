@@ -17,6 +17,10 @@ describe 'as a logged in user' do
       click_on "Create Company"
 
       expect(page).to have_content("firstclass transportation")
+      expect(page).to have_content("904-964-504")
+      expect(page).to have_content("fct@mail.com")
+      expect(page).to have_content("firstclasstransportation.com")
+      expect(page).to have_content("transportation for all")
     end
   end
 end

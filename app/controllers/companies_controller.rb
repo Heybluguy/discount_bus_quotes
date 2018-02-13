@@ -1,12 +1,10 @@
 class CompaniesController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
-    @company = @user.companies.new
+    @company = Company.new
   end
 
   def create
-
     @user = User.find(params[:user_id])
     @company = @user.companies.new(company_params)
     if @company.save
@@ -20,6 +18,25 @@ class CompaniesController < ApplicationController
     @user = User.find(params[:user_id])
     @companies = @user.companies
   end
+
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    company = Company.find(params[:id])
+    if company.update(company_params)
+      redirect_to user_company_path(company.user, company)
+    else
+      render :edit
+    end
+  end
+
+  def show
+    @company = Company.find(params[:id])
+  end
+
+
 
     private
       def company_params
