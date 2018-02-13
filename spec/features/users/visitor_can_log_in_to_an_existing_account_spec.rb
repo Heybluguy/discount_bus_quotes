@@ -3,7 +3,9 @@ require 'rails_helper'
 describe 'as a visitor i can log in to an existing account' do
   describe 'when i am on the root path' do
     scenario 'i can log in to my existing account with email and password' do
-      user = User.create(name: "ilana", email: "funbucket13", password: "1234")
+      user = User.create(name: "ilana",
+                         email: "funbucket13",
+                         password: "1234")
 
       visit '/'
 
