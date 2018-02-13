@@ -2,9 +2,11 @@
 
 
 <% @companies.each do |company| %>
-  <%= company.name %>
-  <%= company.phone %>
-  <%= company.email %>
-  <%= company.website %>
-  <%= company.description %>
+  <%= company.name %><br>
+  <%= company.phone %><br>
+  <%= company.email %><br>
+  <%= company.website %><br>
+  <%= company.description %><br>
+  <%= link_to "Delete", user_company_path(@user, company), method: :delete  %><br>
+  <%= link_to "Edit", edit_user_company_path(@user, company) %>
 <% end %>

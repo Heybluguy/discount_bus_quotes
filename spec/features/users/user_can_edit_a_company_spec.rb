@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'as a user' do
   describe 'when i am on on the edit company path' do
     scenario 'i see an edit form to change the information for a company' do
-      state = State.create!(name: "Florida")
+      state = create(:state)
       user = create(:user)
       company = create(:company, user: user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
