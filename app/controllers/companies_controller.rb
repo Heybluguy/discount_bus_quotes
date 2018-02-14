@@ -52,4 +52,3 @@ class CompaniesController < ApplicationController
       end
 end
 
-# Image.new(:image => File.new(path_to_your_file, "r"))
