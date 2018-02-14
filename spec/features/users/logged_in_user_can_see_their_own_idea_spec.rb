@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 describe 'as a logged in user' do
   describe 'when im am in my own company path' do
     scenario 'i see all info for my company as well as option to edit or delete it' do
