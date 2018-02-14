@@ -24,9 +24,9 @@ describe 'as an user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit "/admin/states"
+      
       expect(page).to_not have_content("Florida")
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
-
 end

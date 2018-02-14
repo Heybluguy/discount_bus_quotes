@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @company = @user.companies.new(company_params)
     if @company.save
       if params[:company][:images]

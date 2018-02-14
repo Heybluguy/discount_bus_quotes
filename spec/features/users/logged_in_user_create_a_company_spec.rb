@@ -27,4 +27,20 @@ describe 'as a logged in user' do
       expect(page).to have_content("transportation for all")
     end
   end
+
+  describe 'when i attempt to go to new user company path that is not mine' do
+    scenario 'i see my own new company path' do
+      state = State.create!(name: "Florida")
+      user_1 = create(:user, name: "Thor")
+      user_2 = create(:user, name: "Scarlett Witch", email: "twinsies@mail.com")
+      company = create(:company, name: "Hammer Co.", user: user_1)
+      company_2 = create(:company, name: "Palm Readings", user: user_2)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_2)
+
+      visit new_user_company_path(user_1)
+
+      expect(page).to have_content("New Company for Scarlett Witch")
+    end
+  end
 end
