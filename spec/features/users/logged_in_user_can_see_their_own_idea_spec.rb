@@ -16,5 +16,20 @@ describe 'as a logged in user' do
       expect(page).to have_content(company.website)
       expect(page).to have_content(company.description)
     end
+
+    scenario "i should not see another user's companies" do
+      state = State.create!(name: "Florida")
+      user = create(:user, name: "Thor")
+      user_2 = create(:user, name: "Scarlett Witch", email: "twinsies@mail.com")
+      company = create(:company, name: "Hammer Co.", user: user)
+      company_2 = create(:company, name: "Palm Readings", user: user_2)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_2)
+
+      visit user_companies_path(user)
+
+      expect(page).to_not have_content("Hammer Co.")
+      expect(page).to have_content("Palm Readings")
+    end
   end
 end
