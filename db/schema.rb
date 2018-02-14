@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213062056) do
+ActiveRecord::Schema.define(version: 20180214025357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(version: 20180213062056) do
     t.string "email"
     t.string "website"
     t.string "description"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
@@ -34,6 +30,15 @@ ActiveRecord::Schema.define(version: 20180213062056) do
     t.bigint "state_id"
     t.index ["company_id"], name: "index_company_states_on_company_id"
     t.index ["state_id"], name: "index_company_states_on_state_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_images_on_company_id"
   end
 
   create_table "states", force: :cascade do |t|
@@ -50,4 +55,5 @@ ActiveRecord::Schema.define(version: 20180213062056) do
   add_foreign_key "companies", "users"
   add_foreign_key "company_states", "companies"
   add_foreign_key "company_states", "states"
+  add_foreign_key "images", "companies"
 end

@@ -8,6 +8,9 @@ class CompaniesController < ApplicationController
     @user = User.find(params[:user_id])
     @company = @user.companies.new(company_params)
     if @company.save
+      if params[:company][:images]
+        Image.upload_image(@company, params[:company][:images].first)
+      end
       redirect_to user_companies_path(@user)
     else
       render :new
@@ -39,14 +42,14 @@ class CompaniesController < ApplicationController
   def destroy
     @user = current_user
     company = Company.find(params[:id])
-    company.delete
+    company.destroy
     redirect_to user_companies_path(@user)
   end
 
-
-
     private
       def company_params
-        params.require(:company).permit(:name, :phone, :email, :website, :description, :image)
+        params.require(:company).permit(:name, :phone, :email, :website, :description)
       end
 end
+
+# Image.new(:image => File.new(path_to_your_file, "r"))
