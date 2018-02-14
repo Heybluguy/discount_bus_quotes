@@ -5,3 +5,7 @@
 <%= @company.email %>
 <%= @company.website %>
 <%= @company.description %>
+
+<% @company.images.each do |image| %>
+  <p><%= image_tag image.image.url %></p>
+<% end %>

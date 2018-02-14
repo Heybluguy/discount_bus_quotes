@@ -5,6 +5,5 @@ FactoryBot.define do
     email "fct@mail.com"
     website "firstclasstransportation.com"
     description "transportation for all"
-    image { File.new("#{Rails.root}/spec/data/image.jpeg") }
   end
 end
