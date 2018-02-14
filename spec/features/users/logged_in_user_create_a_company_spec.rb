@@ -8,7 +8,7 @@ describe 'as a logged in user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit new_user_company_path(user)
-save_and_open_page
+
       fill_in "company[name]",	with: "firstclass transportation"
       fill_in "company[phone]",	with: "904-964-504"
       fill_in "company[email]",	with: "fct@mail.com"
