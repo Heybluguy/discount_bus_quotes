@@ -1,0 +1,7 @@
+<h1>Admin States</h1>
+<%= link_to "Add a State", new_admin_state_path %>
+
+<% @states.each do |state| %>
+  <%= state.name %>
+  <%= link_to "Delete", admin_state_path(state), method: :delete  %><br>
+<% end %>
