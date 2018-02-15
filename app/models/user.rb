@@ -5,6 +5,6 @@ class User < ApplicationRecord
 
   enum role: %w(default admin)
 
-  has_many :companies
+  has_many :companies, dependent: :destroy
 
 end
