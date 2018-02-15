@@ -2,12 +2,10 @@
 <h3><%= link_to "Add a State", new_admin_state_path %></h3>
 
 <div class='all-container'>
-  <div class='single-container'>
-    <% @states.each do |state| %>
-    <p>
-      <br><%= state.name %>
-      <%= link_to "Delete", admin_state_path(state), method: :delete  %><br>
-    </p>
-    <% end %>
-  </div>
+  <% @states.each do |state| %>
+    <div class='single-container'>
+        <h3><%= state.name %></h3>
+        <%= link_to "Delete", admin_state_path(state), method: :delete  %>
+    </div>
+  <% end %>
 </div>
