@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <div class='nav-bar'>
+      <%if current_user && current_user.admin?%>
+        <ul>
+          <%= link_to "States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
+        </ul>
+      <%elsif current_user && current_user.default?%>
+        <ul>
+          <%= link_to "Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
+        </ul>
+      <% else %>
+
+      <%end%>
+
+    </div>
+
     <%= yield %>
   </body>
 </html>

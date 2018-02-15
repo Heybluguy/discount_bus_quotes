@@ -1,11 +1,14 @@
-<h3><%= @company.name %></h3>
 
+<div class='all-container'>
+  <div class='single-container' >
+    <h3><%= @company.name %></h3>
+    <%= @company.phone %>
+    <%= @company.email %>
+    <%= @company.website %>
+    <%= @company.description %>
 
-<%= @company.phone %>
-<%= @company.email %>
-<%= @company.website %>
-<%= @company.description %>
-
-<% @company.images.each do |image| %>
-  <p><%= image_tag image.image.url %></p>
-<% end %>
+    <% @company.images.each do |image| %>
+      <p><%= image_tag image.image.url %></p>
+    <% end %>
+  </div>
+</div>

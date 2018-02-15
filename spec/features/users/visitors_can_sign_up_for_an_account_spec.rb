@@ -9,13 +9,13 @@ describe 'as a visitor i can see an option to sign up' do
 
       expect(current_path).to eq(new_user_path)
 
-      fill_in "user[name]", with: "ilana"
-      fill_in "user[email]", with: "funbucket"
-      fill_in "user[password]", with: "123"
+      fill_in "user[name]", with: "Scott Lang"
+      fill_in "user[email]", with: "Antman@marvel.com"
+      fill_in "user[password]", with: "Pym Technologies"
 
       click_on "Create User"
 
-      expect(page).to have_content("Welcome, ilana")
+      expect(page).to have_content("Welcome, Scott Lang")
     end
   end
 end
