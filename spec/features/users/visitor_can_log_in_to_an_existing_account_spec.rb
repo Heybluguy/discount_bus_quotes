@@ -7,7 +7,7 @@ describe 'as a visitor i can log in to an existing account' do
 
       visit '/'
 
-      click_on "I already have an account"
+      click_on "I Already Have An Account"
       fill_in "email", with: user.email
       fill_in "password", with: user.password
 

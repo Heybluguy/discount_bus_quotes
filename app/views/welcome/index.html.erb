@@ -1,0 +1,11 @@
+<div class='all-container'>
+  <% @companies.each do |company| %>
+    <div class='single-container'>
+      Company: <%= company.name %><br>
+      Phone: <%= company.phone %><br>
+      Email: <%= company.email %><br>
+      Website: <%= company.website %><br>
+      Description: <%= company.description %><br>
+    </div>
+  <% end %>
+</div>
