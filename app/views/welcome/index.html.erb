@@ -1,11 +1,11 @@
-<div class='all-container'>
+<div class='all-container welcome-container'>
   <% @companies.each do |company| %>
-    <div class='single-container'>
+    <div class='single-container welcome-index'>
       Company: <%= company.name %><br>
       Phone: <%= company.phone %><br>
       Email: <%= company.email %><br>
       Website: <%= company.website %><br>
       Description: <%= company.description %><br>
-    </div>
+    </div><br>
   <% end %>
 </div>
