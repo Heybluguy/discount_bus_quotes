@@ -16,7 +16,7 @@
         <%= f.text_field      :description %><br>
         <% @company.images.each do |image| %>
           <%= image_tag image.image.url, size: "200x150" %><br>
-          <%= link_to "Delete", image_path(image), method: :delete %><br>
+          <%= link_to "Delete", image_path(images), method: :delete %><br>
         <% end %><br>
         <%= label             :images, "Attach an Image" %><br />
         <%= f.file_field      :images, multiple: true %><br>
