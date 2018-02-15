@@ -12,8 +12,6 @@ describe 'as a user' do
       click_on "Logout"
 
       expect(current_path).to eq('/')
-      expect(page).to have_content("Sign Up to Be a User")
-      expect(page).to have_content("I already have an account")
     end
   end
 end

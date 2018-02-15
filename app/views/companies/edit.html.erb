@@ -1,18 +1,26 @@
 <h3>Edit Company<h3>
 
-<%= form_for [:user, @company], html: {multipart: true} do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= collection_select :company, :states, State.all, :id, :name %><br>
-  <%= f.label :phone %><br>
-  <%= f.text_field :phone %><br>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label :website %><br>
-  <%= f.text_field :website %><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <%= f.label :image, "Attach an Image" %><br />
-  <%= f.file_field :image %><br>
-  <%= f.submit %>
-<% end %>
+  <div class='all-container'>
+    <div class='single-container'>
+      <%= form_for [:user, @company], html: {multipart: true} do |f| %>
+        <%= f.label           :name %><br>
+        <%= f.text_field      :name %><br>
+        <%= collection_select :company, :states, State.all, :id, :name %><br>
+        <%= f.label           :phone %><br>
+        <%= f.text_field      :phone %><br>
+        <%= f.label           :email %><br>
+        <%= f.text_field      :email %><br>
+        <%= f.label           :website %><br>
+        <%= f.text_field      :website %><br>
+        <%= f.label           :description %><br>
+        <%= f.text_field      :description %><br>
+        <% @company.images.each do |image| %>
+          <%= image_tag image.image.url, size: "200x150" %><br>
+          <%= link_to "Delete", image_path(image), method: :delete %><br>
+        <% end %><br>
+        <%= label             :images, "Attach an Image" %><br />
+        <%= f.file_field      :images, multiple: true %><br>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>

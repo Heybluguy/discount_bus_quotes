@@ -5,7 +5,7 @@ describe 'as a visitor i can see an option to sign up' do
     scenario 'i can sign up with a email and password' do
       visit '/'
 
-      click_on "Sign Up to Be a User"
+      click_on "Sign Up to Be a Vendor"
 
       expect(current_path).to eq(new_user_path)
 

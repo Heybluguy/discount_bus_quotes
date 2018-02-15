@@ -1,4 +1,6 @@
-<h3>All Companies</h3>
+<h3>All Companies</h3><br>
+<h3><%= link_to "Add a Company", new_user_company_path(@user) %></h3>
+
 
 <div class='all-container'>
   <% @companies.each do |company| %>

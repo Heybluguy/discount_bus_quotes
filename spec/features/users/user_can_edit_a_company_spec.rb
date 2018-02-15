@@ -16,7 +16,7 @@ describe 'as a user' do
       fill_in "company[website]",	with: "eastcoasttransportation.com"
       fill_in "company[description]",	with: "We can take you anywhere."
       select("Florida", :from => "company[states]")
-      attach_file('company[image]', "./spec/data/image.jpeg")
+      attach_file('company[images]', "./spec/data/image.jpeg")
 
       click_on "Update Company"
 

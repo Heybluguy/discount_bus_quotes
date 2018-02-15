@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DiscountBusQuotes</title>
+    <title>Discount Bus Quotes</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,16 +12,17 @@
     <div class='nav-bar'>
       <%if current_user && current_user.admin?%>
         <ul>
-          <%= link_to "States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
+          <%= link_to "Users", admin_users_path %><%= link_to "States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
         </ul>
       <%elsif current_user && current_user.default?%>
         <ul>
           <%= link_to "Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
         </ul>
       <% else %>
-
+        <ul>
+          <%= link_to "Sign Up to Be a Vendor", new_user_path %><br><%= link_to "I already have an account", login_path %><br>
+        </ul>
       <%end%>
-
     </div>
 
     <%= yield %>

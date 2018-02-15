@@ -11,7 +11,7 @@ describe 'User visits states index page' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_states_path
-      expect(page).to have_content("Admin States")
+      expect(page).to have_content("States")
     end
   end
 
@@ -21,7 +21,7 @@ describe 'User visits states index page' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit admin_states_path
-      expect(page).to_not have_content("Admin States")
+      expect(page).to_not have_content("States")
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :companies, only: [:new, :index, :create, :edit, :update, :show, :destroy]
   end
 
+  resources :images, only: [:destroy]
+  
   namespace :admin do
     resources :states, only: [:index, :destroy, :new, :create]
     resources :users, only: [:index, :show, :destroy]
