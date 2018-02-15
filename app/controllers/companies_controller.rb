@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     @company = @user.companies.new(company_params)
     if @company.save
       if params[:company][:images]
-        Image.upload_image(@company, params[:company][:images].first)
+        Image.upload_image(@company, params[:company][:images])
       end
       redirect_to user_companies_path(@user)
     else
@@ -30,7 +30,7 @@ class CompaniesController < ApplicationController
     company = Company.find(params[:id])
     if company.update(company_params)
       if params[:company][:images]
-        Image.upload_image(company, params[:company][:images].first)
+        Image.upload_image(company, params[:company][:images])
       end
       redirect_to user_company_path(company.user, company)
     else

@@ -1,20 +1,22 @@
-<h3>New Company for <%= current_user.name %></h3>
+<br><br><h3>New Company for <%= current_user.name %></h3>
 
 <div class='all-container'>
   <div class='single-container'>
     <%= form_for [:user, @company], html: {multipart: true} do |f| %>
-      <%= f.label           :name %><br>
-      <%= f.text_field      :name %><br>
-      <%= collection_select :company, :states, State.all, :id, :name %><br>
-      <%= f.label           :phone %><br>
-      <%= f.text_field      :phone %><br>
-      <%= f.label           :email %><br>
-      <%= f.text_field      :email %><br>
-      <%= f.label           :website %><br>
-      <%= f.text_field      :website %><br>
-      <%= f.label           :description %><br>
-      <%= f.text_field      :description %><br>
+      <%= f.label           :name %>
+      <%= f.text_field      :name %>
+      <%= collection_select :company, :states, State.all, :id, :name %>
+      <%= f.label           :phone %>
+      <%= f.text_field      :phone %>
+      <%= f.label           :email %>
+      <%= f.text_field      :email %>
+      <%= f.label           :website %>
+      <%= f.text_field      :website %>
+      <%= f.label           :description %>
+      <%= f.text_field      :description %>
       <%= label             :images, "Attach an Image" %><br />
+      <%= f.file_field      :images, multiple: true %><br>
+      <%= f.file_field      :images, multiple: true %><br>
       <%= f.file_field      :images, multiple: true %><br>
       <%= f.submit %>
     <% end %>

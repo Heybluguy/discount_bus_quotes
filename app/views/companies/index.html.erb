@@ -1,4 +1,4 @@
-<h3>All Companies</h3><br>
+<br><br><h3>All Companies</h3><br>
 <h3><%= link_to "Add a Company", new_user_company_path(@user) %></h3>
 
 
@@ -10,7 +10,7 @@
         <%= company.phone %><br>
         <%= company.email %><br>
         <%= company.website %><br>
-        <%= company.description %><br>
+        <%= company.description %><br><br>
         <%= link_to "Delete", user_company_path(@user, company), method: :delete  %><br>
         <%= link_to "Edit", edit_user_company_path(@user, company) %><br>
       </p>
