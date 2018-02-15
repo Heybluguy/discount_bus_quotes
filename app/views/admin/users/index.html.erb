@@ -1,8 +1,14 @@
-<h1>Admin Users</h1>
+<h3>Admin Users</h3>
 
-<% @users.reverse_each do |user| %>
-  <%= user.name %><br>
-  <%= user.email %><br>
+<div class='all-container'>
+  <div class='single-container'>
+    <% @users.reverse_each do |user| %>
+    <p>
+      <%= user.name %><br>
+      <%= user.email %><br>
 
-  <%= link_to "Delete", admin_user_path(user), method: :delete  %><br>
-<% end %>
+      <%= link_to "Delete", admin_user_path(user), method: :delete  %>
+      </p><br>
+    <% end %>
+  </div>
+</div>

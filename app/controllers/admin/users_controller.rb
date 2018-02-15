@@ -10,5 +10,4 @@ class Admin::UsersController < ApplicationController
     user.delete
     redirect_to admin_users_path(@admin)
   end
-
 end

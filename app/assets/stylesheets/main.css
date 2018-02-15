@@ -1,7 +1,7 @@
 .nav-bar {
-    background: url("coollogo.png");
+    background: url("http://vtdesignz.co/dev/ci/busquotes/uploads/8af402a46bd6c14349b47207fd37cd0b.png");
     background-repeat: no-repeat;
-    background-size: 30%;
+    background-size: 20%;
     height: 50%;
     width: 50%;
     background-position: center;
@@ -11,31 +11,38 @@
     justify-content: flex-end;
     padding: 0;
     overflow: hidden;
-    background-color:rgb(228, 105, 105);
+    background-color:rgb(233, 233, 233);
     margin-top: 0px;
 }
 
 h3 {
     text-align: center;
-    color:rgb(16, 107, 128);
+    color:rgb(41, 171, 225);
     margin: 0px;
-    font-family: 'marker felt', sans-serif;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+p {
+    text-align: center;
+    color:rgb(41, 171, 225);
+    margin: 0px;
+    font-family: 'Pathway Gothic One', sans-serif;
 }
 
 
 .single-container h3 {
-    color:rgb(1, 4, 5);
-    margin:1px;
+    color:rgb(41, 171, 225);
+    margin:70px;
 }
 
 .all-container a {
     text-decoration: none;
-    color:rgb(2, 15, 24)
+    color:rgb(27, 19, 99)
 }
 
 .single-container p {
     text-decoration: none;
-    color:rgb(2, 15, 24)
+    color:rgb(27, 19, 99)
 }
 
 input[type=text], select {
@@ -43,14 +50,14 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 4px solid rgb(3, 177, 168);
+    border: 4px solid rgb(27, 19, 99);
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 input[type=submit] {
     width: 100%;
-    background-color: rgb(228, 105, 105);
+    background-color: rgb(27, 19, 99);
     color: rgb(228, 225, 255);
     padding: 14px 20px;
     margin: 8px 0;
@@ -60,32 +67,38 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: rgb(5, 176, 182);
+    background-color:rgb(41, 171, 225);
 }
 
 .all-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 75px;
     grid-auto-rows: minmax(300px, auto);
     border-radius: 5px;
     padding: 30px;
     padding-top: 20px;
     padding-bottom: 1px;
-    color: rgb(4, 171, 212);
-    font-family: 'marker felt', sans-serif;
+    color: rgb(41, 171, 225);
+    font-family: 'Pathway Gothic One', sans-serif;
     letter-spacing: 4px;
     text-align: center;
 }
 
 .single-container {
-
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Post-it-note-transparent.png" );
-    background-size: 110%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    border-radius: 5px;
+    background-color: #f2f2f2c5;
     padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    margin-top: 1px;
+    margin-right: 400px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+    color: rgb(27, 19, 99);
+    font-family: 'Pathway Gothic One', sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
 
 }
 
@@ -95,7 +108,7 @@ ul {
 
 ul a {
     display: block;
-    color:rgb(12, 181, 161);
+    color:rgb(41, 171, 225);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -103,31 +116,16 @@ ul a {
 }
 
 ul a:hover {
-    color: rgb(19, 112, 136);
+    color: rgb(41, 171, 225);
     background-color: rgba(0, 0, 0, 0.5)
 }
-.form {
 
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Post-it-note-transparent.png" );
-    background-size: 110%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 5px;
-    padding: 60px;
-    margin-top: 1px;
-    margin-right: 400px;
-    margin-left: 400px;
-    color: rgb(10, 140, 192);
-    font-family: 'marker felt', sans-serif;
-    text-align: center;
-}
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("https://img00.deviantart.net/e215/i/2007/059/2/1/corkboard_wood_cork_composite_by_enchantedgal_stock.jpg" );
+    background-image: url("https://images.unsplash.com/photo-1470883361187-d6eaa64cdf00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67bc2460da1c487cd65e4fb119eeb213&auto=format&fit=crop&w=2378&q=80" );
     background-attachment: fixed;
     background-size: 103%;
     margin: 0px;

@@ -1,7 +1,11 @@
 <h3>New State</h3>
 
-<%= form_for [:admin, @state] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class='all-container'>
+  <div class='single-container' >
+    <%= form_for [:admin, @state] do |f| %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

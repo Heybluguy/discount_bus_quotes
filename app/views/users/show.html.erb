@@ -1,1 +1,7 @@
-<h2>Welcome, <%= current_user.name %>!</h2>
+<div class='all-container'>
+  <div class='single-container'>
+    <h3>Welcome, <%= current_user.name %>!</h3>
+    <h3><%= link_to "Add a Company", new_user_company_path(@user) %></h3>
+
+  </div>
+</div>

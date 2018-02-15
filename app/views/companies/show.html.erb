@@ -1,14 +1,17 @@
 
 <div class='all-container'>
   <div class='single-container' >
-    <h3><%= @company.name %></h3>
-    <%= @company.phone %>
-    <%= @company.email %>
-    <%= @company.website %>
-    <%= @company.description %>
+    <h3>Company: <%= @company.name %></h3>
+    Phone: <%= @company.phone %><br>
+    Email: <%= @company.email %><br>
+    Website: <%= @company.website %><br>
+    Description: <%= @company.description %><br>
+    <%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
+    <%= link_to "Edit", edit_user_company_path(@company.user, @company) %><br>
 
     <% @company.images.each do |image| %>
-      <p><%= image_tag image.image.url %></p>
+      <%= image_tag image.image.url, size: "200x150" %>
     <% end %>
+
   </div>
 </div>

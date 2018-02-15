@@ -29,6 +29,9 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params[:id])
     if company.update(company_params)
+      if params[:company][:images]
+        Image.upload_image(company, params[:company][:images].first)
+      end
       redirect_to user_company_path(company.user, company)
     else
       render :edit
