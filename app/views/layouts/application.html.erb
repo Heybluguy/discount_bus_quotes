@@ -16,11 +16,11 @@
         </ul>
       <%elsif current_user && current_user.default?%>
         <ul>
-          <%= link_to "All Companies", root_path %><%= link_to "My Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
+          <h3><%= current_user.name %></h3><%= link_to "All Companies", root_path %><%= link_to "My Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
         </ul>
       <% else %>
         <ul>
-          <%= link_to "All Companies", root_path %><%= link_to "Sign Up to Be a Vendor", new_user_path %><br><%= link_to "I Already Have An Account", login_path %><br>
+          <%=  %><%= link_to "All Companies", root_path %><%= link_to "Sign Up to Be a Vendor", new_user_path %><br><%= link_to "I Already Have An Account", login_path %><br>
         </ul>
       <%end%>
     </div>

@@ -1,3 +1,5 @@
+<br><br><h3>All Companies</h3><br>
+
 <div class='all-container welcome-container'>
   <% @companies.each do |company| %>
     <div class='single-container welcome-index'>
@@ -5,7 +7,6 @@
       Phone: <%= company.phone %><br>
       Email: <%= company.email %><br>
       Website: <%= company.website %><br>
-      <%= company.created_at.strftime("Member since %m/%d/%Y") if company.created_at %><br><br>
       Description: <%= company.description %><br><br>
       <div class='images-container'>
         <% company.images.each do |image| %>
