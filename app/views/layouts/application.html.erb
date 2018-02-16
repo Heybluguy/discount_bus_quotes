@@ -12,15 +12,15 @@
     <div class='nav-bar'>
       <%if current_user && current_user.admin?%>
         <ul>
-          <%= link_to "Users", admin_users_path %><%= link_to "States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
+          <%= link_to "All Companies", root_path %><%= link_to "All Users", admin_users_path %><%= link_to "All States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
         </ul>
       <%elsif current_user && current_user.default?%>
         <ul>
-          <%= link_to "Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
+          <%= link_to "All Companies", root_path %><%= link_to "My Companies", user_companies_path(user_id: current_user.id ) %><%= link_to "Logout", logout_path, method: :delete%>
         </ul>
       <% else %>
         <ul>
-          <%= link_to "Sign Up to Be a Vendor", new_user_path %><br><%= link_to "I Already Have An Account", login_path %><br>
+          <%= link_to "All Companies", root_path %><%= link_to "Sign Up to Be a Vendor", new_user_path %><br><%= link_to "I Already Have An Account", login_path %><br>
         </ul>
       <%end%>
     </div>

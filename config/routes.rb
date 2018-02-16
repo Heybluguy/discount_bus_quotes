@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     resources :companies, only: [:new, :index, :create, :edit, :update, :show, :destroy] do
       resources :states, only: [:destroy]
+      resources :vehicles, only: [:new, :index, :create, :edit, :update, :show, :destroy]
     end
   end
 

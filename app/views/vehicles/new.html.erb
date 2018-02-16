@@ -1,0 +1,15 @@
+<br><br><h3>Create a New Vehicle</h3>
+
+<div class='all-container'>
+  <div class='single-container'>
+    <%= form_for [:user, :company, @vehicle] do |f| %>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      <%= f.label :seats %>
+      <%= f.text_field :seats %>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

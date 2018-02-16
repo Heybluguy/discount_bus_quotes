@@ -15,6 +15,23 @@
       <% @company.images.each do |image| %>
         <%= image_tag image.image.url, size: "200x150" %>
       <% end %>
+
     </div>
   </div>
 </div>
+
+    <div class='vehicles-container'>
+      <div class='vehicle-container'>
+        <h3><%= link_to "Add New Vehicle", new_user_company_vehicle_path(@company.user, @company) %></h3>
+      </div>
+      <% @company.vehicles.each do |vehicle| %>
+      <div class='vehicle-container'>
+        <%= vehicle.category %></br>
+        <%= vehicle.seats %></br>
+        <%= number_to_currency(vehicle.price) %></br>
+        <%= link_to "Edit", edit_user_company_vehicle_path(@company.user, @company, vehicle) %>
+        <%= link_to "Delete", user_company_vehicle_path(@company.user, @company, vehicle), method: :delete %>
+      </div>
+      <% end %>
+    </div>
+
