@@ -1,0 +1,15 @@
+<h3>All companies for: <%=@state.name%></h3>
+
+<div class='states-container'>
+  <% @state.companies.each do |company| %>
+    <div class='state-container'>
+      <div>
+        <%= link_to company.name, user_company_path(company.user, company) %>
+</br><br>
+      </div>
+      <div>
+        Description: <%= company.description %>
+      </div>
+    </div>
+  <% end %>
+</div>

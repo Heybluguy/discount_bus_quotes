@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-
+  before_action :check_user, only: [:new, :edit, :index]
   def new
     @company = Company.new
   end
@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
     @user = current_user
     @company = @user.companies.new(company_params)
     if @company.save
+      @company.company_states.create(state_id:params[:company][:states])
       if params[:company][:images]
         Image.upload_image(@company, params[:company][:images])
       end
@@ -29,6 +30,7 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params[:id])
     if company.update(company_params)
+      State.add_states(params[:company][:state_ids], company)
       if params[:company][:images]
         Image.upload_image(company, params[:company][:images])
       end

@@ -5,7 +5,11 @@
     <%= form_for [:user, @company], html: {multipart: true} do |f| %>
       <%= f.label           :name %>
       <%= f.text_field      :name %>
-      <%= collection_select :company, :states, State.all, :id, :name %>
+      <div class='state-collection-selectors'>
+        <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+        <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+        <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+      </div>
       <%= f.label           :phone %>
       <%= f.text_field      :phone %>
       <%= f.label           :email %>
@@ -15,9 +19,9 @@
       <%= f.label           :description %>
       <%= f.text_field      :description %>
       <%= label             :images, "Attach an Image" %><br />
-      <%= f.file_field      :images, multiple: true %><br>
-      <%= f.file_field      :images, multiple: true %><br>
-      <%= f.file_field      :images, multiple: true %><br>
+      <div class='image-collection'><%= f.file_field      :images, multiple: true %></div><br>
+      <div class='image-collection'><%= f.file_field      :images, multiple: true %></div><br>
+      <div class='image-collection'><%= f.file_field      :images, multiple: true %></div><br>
       <%= f.submit %>
     <% end %>
   </div>

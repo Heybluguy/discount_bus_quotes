@@ -1,14 +1,14 @@
-<h3>Admin Users</h3>
+<h3>All Users</h3>
 
-<div class='all-container'>
+<div class='states-container'>
     <% @users.reverse_each do |user| %>
-      <div class='single-container'>
+      <div class='state-container'>
         <p>
-          <%= user.name %><br>
-          <%= user.email %><br>
+          <h3><%= user.name %></h3>
+          Email: <%= user.email %><br><br>
           <% user.companies.each do |company| %>
-            <%= company.name %><br>
-          <% end %>
+            <li><%= link_to company.name, user_company_path(user, company) %><br></li>
+          <% end %><br>
 
           <%= link_to "Delete", admin_user_path(user), method: :delete  %>
           </p><br>

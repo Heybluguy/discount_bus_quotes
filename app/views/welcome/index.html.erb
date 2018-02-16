@@ -1,11 +1,16 @@
 <div class='all-container welcome-container'>
   <% @companies.each do |company| %>
     <div class='single-container welcome-index'>
-      Company: <%= company.name %><br>
+      <h3><%= company.name %></h3>
       Phone: <%= company.phone %><br>
       Email: <%= company.email %><br>
-      Website: <%= company.website %><br>
-      Description: <%= company.description %><br>
+      Website: <%= company.website %><br><br>
+      Description: <%= company.description %><br><br>
+      <div class='images-container'>
+        <% company.images.each do |image| %>
+          <%= image_tag image.image.url, size: "200x150" %>
+        <% end %>
+      </div>
     </div><br>
   <% end %>
 </div>
