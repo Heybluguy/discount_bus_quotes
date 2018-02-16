@@ -20,9 +20,10 @@ class Admin::StatesController < Admin::BaseController
   end
 
   def destroy
+    require 'pry'; binding.pry
     @admin = current_user
     state = State.find(params[:id])
-    state.delete
+    state.destroy
     redirect_to admin_states_path(@admin)
   end
 

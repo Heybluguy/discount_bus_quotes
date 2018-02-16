@@ -5,7 +5,16 @@
       <%= form_for [:user, @company], html: {multipart: true} do |f| %>
         <%= f.label           :name %>
         <%= f.text_field      :name %>
-        <%= collection_select :company, :states, State.all, :id, :name %>
+        Current Locations:<br>
+        <% @company.states.each do |state| %>
+          <%= state.name %></br>
+          <h5><%= link_to "Delete", user_company_state_path(@company.user, @company, state), method: :delete %></h5>
+        <% end %>
+        <div class='state-collection-selectors'>
+          <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+          <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+          <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
+        </div>
         <%= f.label           :phone %>
         <%= f.text_field      :phone %>
         <%= f.label           :email %>

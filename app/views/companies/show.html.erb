@@ -1,12 +1,15 @@
 
 <div class='all-container'>
   <div class='single-container user-show' >
-    <h3>Company: <%= @company.name %></h3>
+    <h3><%= @company.name %></h3>
     Phone: <%= @company.phone %><br>
     Email: <%= @company.email %><br>
-    Website: <%= @company.website %><br>
-    Description: <%= @company.description %><br>
-    <%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
+    Website: <%= @company.website %><br><br>
+    Description: <%= @company.description %><br><br>
+    Locations: <br><% @company.states.each do |state| %>
+                  <%= state.name %></br>
+               <% end %>
+    <br><%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
     <%= link_to "Edit", edit_user_company_path(@company.user, @company) %><br>
     <div class='images-container'>
       <% @company.images.each do |image| %>

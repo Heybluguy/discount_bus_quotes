@@ -15,7 +15,9 @@ describe 'as a user' do
       fill_in "company[email]",	with: "ect@mail.com"
       fill_in "company[website]",	with: "eastcoasttransportation.com"
       fill_in "company[description]",	with: "We can take you anywhere."
-      select("Florida", :from => "company[states]")
+      within(first('.state-collection')) do
+        select("Florida", :from => "company[state_ids][]")
+      end
 
       click_on "Update Company"
 

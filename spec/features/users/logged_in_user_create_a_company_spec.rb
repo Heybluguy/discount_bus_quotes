@@ -8,14 +8,18 @@ describe 'as a logged in user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit new_user_company_path(user)
-
+save_and_open_page
       fill_in "company[name]",	with: "firstclass transportation"
       fill_in "company[phone]",	with: "904-964-504"
       fill_in "company[email]",	with: "fct@mail.com"
       fill_in "company[website]",	with: "firstclasstransportation.com"
       fill_in "company[description]",	with: "transportation for all"
-      select("Florida", :from => "company[states]")
-      attach_file('company[images][]', "./spec/data/image.jpeg")
+      within(first('.state-collection')) do
+        select("Florida", :from => "company[state_ids][]")
+      end
+      within(first('.image-collection')) do
+        attach_file('company[images][]', "./spec/data/image.jpeg")
+      end
 
       click_on "Create Company"
 
