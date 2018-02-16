@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
     @user = current_user
     @company = @user.companies.new(company_params)
     if @company.save
-      State.add_states(params[:company][:state_ids], company)
+      State.add_states(params[:company][:state_ids], @company)
       if params[:company][:images]
         Image.upload_image(@company, params[:company][:images])
       end
