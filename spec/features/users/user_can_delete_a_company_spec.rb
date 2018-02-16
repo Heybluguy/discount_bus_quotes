@@ -12,7 +12,7 @@ describe 'as a user' do
 
       click_on "Delete"
 
-      expect(page).to_not have_content("Peter Parker")
+      expect(page).to_not have_content("firstclasstranssportation.com")
     end
   end
 end

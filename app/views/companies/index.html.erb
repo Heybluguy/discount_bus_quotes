@@ -1,4 +1,4 @@
-<br><br><h3>All Companies</h3><br>
+<br><br><h3>My Companies</h3><br>
 <h3><%= link_to "Add a Company", new_user_company_path(@user) %></h3>
 
 
@@ -6,7 +6,7 @@
   <% @companies.each do |company| %>
     <div class='state-container'>
       <p>
-        <%= link_to company.name, user_company_path(@user, company) %><br>
+        <h3><%= link_to company.name, user_company_path(@user, company) %></h3><br>
         <%= company.phone %><br>
         <%= company.email %><br>
         <%= company.website %><br>

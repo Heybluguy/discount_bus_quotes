@@ -6,11 +6,15 @@
     Email: <%= @company.email %><br>
     Website: <%= @company.website %><br><br>
     Description: <%= @company.description %><br><br>
-    Locations: <br><% @company.states.each do |state| %>
-                  <%= state.name %></br>
-               <% end %>
-    <br><%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
-    <%= link_to "Edit", edit_user_company_path(@company.user, @company) %><br>
+    <% if @company.states.any? %>
+      Locations: <br><% @company.states.each do |state| %>
+                    <%= state.name %></br>
+                <% end %>
+    <% end %>
+    <% if current_user %>
+      <br><%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
+      <%= link_to "Edit", edit_user_company_path(@company.user, @company) %><br>
+    <% end %>
     <div class='images-container'>
       <% @company.images.each do |image| %>
         <%= image_tag image.image.url, size: "200x150" %>
@@ -21,16 +25,20 @@
 </div>
 
     <div class='vehicles-container'>
-      <div class='vehicle-container'>
-        <h3><%= link_to "Add New Vehicle", new_user_company_vehicle_path(@company.user, @company) %></h3>
-      </div>
+      <% if current_user %>
+        <div class='vehicle-container'>
+          <h3><%= link_to "Add New Vehicle", new_user_company_vehicle_path(@company.user, @company) %></h3>
+        </div>
+      <% end %>
       <% @company.vehicles.each do |vehicle| %>
       <div class='vehicle-container'>
-        <%= vehicle.category %></br>
-        <%= vehicle.seats %></br>
-        <%= number_to_currency(vehicle.price) %></br>
-        <%= link_to "Edit", edit_user_company_vehicle_path(@company.user, @company, vehicle) %>
-        <%= link_to "Delete", user_company_vehicle_path(@company.user, @company, vehicle), method: :delete %>
+        Category: <%= vehicle.category %></br>
+        Seats: <%= vehicle.seats %></br>
+        Price: <%= number_to_currency(vehicle.price) %></br>
+        <% if current_user %>
+          <%= link_to "Edit", edit_user_company_vehicle_path(@company.user, @company, vehicle) %>
+          <%= link_to "Delete", user_company_vehicle_path(@company.user, @company, vehicle), method: :delete %>
+        <% end %>
       </div>
       <% end %>
     </div>

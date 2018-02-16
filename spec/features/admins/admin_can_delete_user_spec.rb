@@ -14,7 +14,7 @@ describe 'User visits user index page' do
 
       visit admin_users_path
 
-      first(:link, "Delete").click
+      first(:link, "Terminate Account").click
 
       expect(page).to_not have_content("The Hulk")
     end

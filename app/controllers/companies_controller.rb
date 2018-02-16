@@ -45,10 +45,10 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    @user = current_user
+    user = current_user
     company = Company.find(params[:id])
     company.destroy
-    redirect_to user_companies_path(@user, company)
+    redirect_to user_companies_path(user)
   end
 
     private

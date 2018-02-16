@@ -1,6 +1,7 @@
 <h3>All Users</h3>
 
 <div class='states-container'>
+
     <% @users.reverse_each do |user| %>
       <div class='state-container'>
         <p>
@@ -12,7 +13,7 @@
             </li>
           <% end %><br>
 
-          <%= link_to "Delete", admin_user_path(user), method: :delete  %>
+          <%= link_to "Terminate Account", admin_user_path(user), method: :delete  %>
           </p><br>
       </div>
     <% end %>
