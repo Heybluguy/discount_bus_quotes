@@ -1,10 +1,11 @@
 <div class='all-container welcome-container'>
   <% @companies.each do |company| %>
     <div class='single-container welcome-index'>
-      <h3><%= company.name %></h3>
+      <h3><%= link_to company.name, user_company_path(company.user, company) %></h3>
       Phone: <%= company.phone %><br>
       Email: <%= company.email %><br>
-      Website: <%= company.website %><br><br>
+      Website: <%= company.website %><br>
+      <%= company.created_at.strftime("Member since %m/%d/%Y") if company.created_at %><br><br>
       Description: <%= company.description %><br><br>
       <div class='images-container'>
         <% company.images.each do |image| %>

@@ -1,7 +1,7 @@
 .nav-bar {
     background: url("http://vtdesignz.co/dev/ci/busquotes/uploads/8af402a46bd6c14349b47207fd37cd0b.png");
     background-repeat: no-repeat;
-    background-size: 20%;
+    background-size: 15%;
     height: 50%;
     width: 50%;
     background-position: center;
@@ -27,6 +27,39 @@
 
 .state-container {
     width: 60%;
+    border-radius: 5px;
+    background-color: #f2f2f2c5;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(27, 19, 99);
+    font-family: 'Pathway Gothic One', sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin: 10px;
+}
+
+.vehicles-container {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.vehicles-container a {
+    color:rgb(41, 171, 225);
+}
+
+.vehicle-container {
+    width: 30%;
     border-radius: 5px;
     background-color: #f2f2f2c5;
     padding: 50px;
@@ -80,7 +113,7 @@ p {
 
 .all-container a {
     text-decoration: none;
-    color:rgb(27, 19, 99);
+    color:rgb(41, 171, 225);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -97,8 +130,8 @@ input[type=text], input[type=password], select {
     margin: 8px 0;
     display: flex;
     text-align: center;
-    border: 1px solid rgb(41, 171, 225);
     border-radius: 100px;
+    border: 1px solid rgb(41, 171, 225);
 }
 
 input[type=submit] {

@@ -10,7 +10,8 @@
         <%= company.phone %><br>
         <%= company.email %><br>
         <%= company.website %><br>
-        <%= company.description %><br><br>
+        <%= company.description %><br>
+        <%= company.created_at.strftime("Member since %m/%d/%Y") %><br><br>
         <%= link_to "Delete", user_company_path(@user, company), method: :delete  %><br>
         <%= link_to "Edit", edit_user_company_path(@user, company) %><br>
       </p>

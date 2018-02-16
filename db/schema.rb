@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214025357) do
+ActiveRecord::Schema.define(version: 20180216041522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20180214025357) do
     t.string "website"
     t.string "description"
     t.bigint "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
@@ -52,8 +54,17 @@ ActiveRecord::Schema.define(version: 20180214025357) do
     t.integer "role", default: 0
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string "category"
+    t.integer "seats"
+    t.integer "price"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_vehicles_on_company_id"
+  end
+
   add_foreign_key "companies", "users"
   add_foreign_key "company_states", "companies"
   add_foreign_key "company_states", "states"
   add_foreign_key "images", "companies"
+  add_foreign_key "vehicles", "companies"
 end
