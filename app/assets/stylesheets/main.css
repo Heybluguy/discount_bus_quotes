@@ -3,16 +3,15 @@
     background-repeat: no-repeat;
     background-size: 15%;
     height: 50%;
-    width: 50%;
     background-position: center;
     list-style-type: none;
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    padding: 0;
+    padding: 10px;
     overflow: hidden;
     background-color:rgb(233, 233, 233);
-    margin-top: 0px;
+    margin-top: 25px;
 }
 
 .states-container {
@@ -164,7 +163,7 @@ input[type=submit]:hover {
 
 .single-container {
     width: 30%;
-    border-radius: 5px;
+    border-radius: 50px;
     background-color: #f2f2f2c5;
     padding: 50px;
     padding-top: 20px;
@@ -197,6 +196,8 @@ input[type=submit]:hover {
     width: 70%;
     display: flex;
     justify-content: center;
+    border: 0px;
+    border-radius: 10%;
 }
 
 ul {
@@ -205,16 +206,22 @@ ul {
 
 ul a {
     display: block;
-    color:rgb(41, 171, 225);
+    color:rgb(242, 245, 247);
+    border: 0px;
+    border-radius: 100px;
+    background-color: rgb(41, 171, 225);
     text-align: center;
+    margin: 15px;
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
 ul a:hover {
+    border: 0px;
+    border-radius: 100px;
     color: rgb(41, 171, 225);
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgb(27, 19, 99)
 }
 
 form {
@@ -228,7 +235,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("https://images.unsplash.com/photo-1470883361187-d6eaa64cdf00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67bc2460da1c487cd65e4fb119eeb213&auto=format&fit=crop&w=2378&q=80" );
+    background-image: url("https://images.unsplash.com/photo-1509388967014-f4d87be14eaf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b30ea5ac9316f5fa6aa98e93ad09e418&auto=format&fit=crop&w=2734&q=80" );
     background-attachment: fixed;
     background-size: 100%;
     margin: 0px;
