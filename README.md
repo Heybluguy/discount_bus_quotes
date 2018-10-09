@@ -1,6 +1,6 @@
 # README
 
-## Link: [Discount Bus Quotes](https://tranquil-shelf-73683.herokuapp.com/)
+## Heroku Link: [Discount Bus Quotes](https://tranquil-shelf-73683.herokuapp.com/)
 
 # Schema
 
