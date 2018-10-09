@@ -1,17 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: flex .4s ease;
+  position: relative;
+}
+
+.section .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: background-color .8s ease;
+}
+
+.section .content {
+  z-index: 2;
+}
+
+.content a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.section:hover {
+  flex: 2;
+}
+
+.section:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+#news {
+  background-image: url(https://images.unsplash.com/photo-1508612761958-e931d843bdd5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=279f0899e88c38fc8cfc248fa6aaa17d&auto=format&fit=crop&w=958&q=80);
+}
+
+
+#transportation {
+  background-image: url(https://images.unsplash.com/photo-1510910370032-cf88a2d5ffd7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ab432404a5f9c9193fd1bb8fcefe1c97&auto=format&fit=crop&w=1950&q=80);
+}
+
+#about {
+  background-image: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e5d85cd16e79671287971a06be066&auto=format&fit=crop&w=1950&q=80);
+}
+
 .nav-bar {
     background: url("http://vtdesignz.co/dev/ci/busquotes/uploads/8af402a46bd6c14349b47207fd37cd0b.png");
     background-repeat: no-repeat;
     background-size: 15%;
-    height: 50%;
     background-position: center;
     list-style-type: none;
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    padding: 10px;
+    /* padding: 10px; */
     overflow: hidden;
     background-color:rgb(233, 233, 233);
-    margin-top: 25px;
 }
 
 .states-container {
@@ -94,7 +159,7 @@ h5 {
 h3 {
     text-align: center;
     color:rgb(41, 171, 225);
-    margin: 0px;
+    margin: 10px;
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
