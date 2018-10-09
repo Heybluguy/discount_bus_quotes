@@ -2,7 +2,6 @@ class State < ApplicationRecord
   has_many :company_states
   has_many :companies, through: :company_states
 
-
   def self.add_states(state_ids, company)
     unique_ids = state_ids.uniq
     unique_ids.delete("")
