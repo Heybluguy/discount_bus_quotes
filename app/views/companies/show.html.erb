@@ -1,14 +1,15 @@
 <div class='all-container'>
   <div class='single-container user-show' >
     <h3><%= @company.name %></h3>
-    Phone: <%= @company.phone %><br>
-    Email: <%= @company.email %><br>
-    Website: <%= @company.website %><br><br>
-    Description: <%= @company.description %><br><br>
+    <h4>Phone: <%= @company.phone %></h4>
+    <h4>Email: <%= @company.email %></h4>
+    <h4>Website: <%= @company.website %></h4>
+    <h4>Description: <%= @company.description %></h4>
     <% if @company.states.any? %>
-      Locations: <br><% @company.states.each do |state| %>
-                    <%= state.name %></br>
-                <% end %>
+      <h4>Locations:</h4>
+      <% @company.states.each do |state| %>
+          <%= state.name %></br>
+      <% end %>
     <% end %>
     <% if current_user && (current_user.admin? || current_user.id == @company.user.id) %>
       <br><%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
@@ -20,7 +21,6 @@
       <% @company.images.each do |image| %>
         <%= image_tag image.image.url, size: "200x150" %>
       <% end %>
-
     </div>
   </div>
 </div>

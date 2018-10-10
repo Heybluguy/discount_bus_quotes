@@ -7,13 +7,13 @@
     <div class='state-container'>
       <p>
         <h3><%= link_to company.name, user_company_path(@user, company) %></h3><br>
-        <%= company.phone %><br>
-        <%= company.email %><br>
-        <%= company.website %><br>
-        <%= company.description %><br>
-        <%= company.created_at.strftime("Member since %m/%d/%Y") if company.created_at %><br><br>
-        <%= link_to "Delete", user_company_path(@user, company), method: :delete  %><br>
-        <%= link_to "Edit", edit_user_company_path(@user, company) %><br>
+        <%= company.created_at.strftime("Added %m/%d/%Y") if company.created_at %><br><br>
+        Phone: <%= company.phone %><br>
+        Email: <%= company.email %><br>
+        Web: <%= company.website %><br>
+        Description: <%= company.description %><br>
+        <%= link_to "Delete", user_company_path(@user, company), method: :delete  %>
+        <%= link_to "Edit", edit_user_company_path(@user, company) %>
       </p>
     </div>
   <% end %>

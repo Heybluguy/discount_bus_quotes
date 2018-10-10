@@ -2,10 +2,18 @@
 <h3><%= link_to "Add a State", new_admin_state_path %></h3>
 
 <div class='states-container'>
-  <% @states.each do |state| %>
-    <div class='state-container'>
-        <h3><%= link_to state.name, state_path(state) %></h3>
-        <%= state.companies.count %>
-    </div>
-  <% end %>
+  <div class='state-container'>
+    <table>
+      <tr>
+        <th>State</th>
+        <th>Count</th>
+      </tr>
+        <% @states.each do |state| %>
+          <tr>
+            <td><%= link_to state.name, state_path(state) %></td>
+            <td><%= state.companies.count %></td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
 </div>
