@@ -10,8 +10,6 @@
 
   <body>
     <div class='nav-bar'>
-      <h4>36,000 rides, 50 states • Over 1 million verified guest reviews • 24/7 customer service</h4>
-
       <%if current_user && current_user.admin?%>
         <ul>
           <%= link_to "All Companies", root_path %><%= link_to "All Users", admin_users_path %><%= link_to "All States", admin_states_path %><%= link_to "Logout", logout_path, method: :delete%>
@@ -25,6 +23,11 @@
           <a href="#companies">All Companies</a><%= link_to "Sign Up to Be a Vendor", new_user_path %><%= link_to "I Already Have An Account", login_path %><br>
         </ul>
       <%end%>
+
+    </div>
+
+    <div class="quote">
+      <h4>36,000 rides, 50 states • Over 1 million verified guest reviews • 24/7 customer service</h4>
     </div>
 
     <%= yield %>

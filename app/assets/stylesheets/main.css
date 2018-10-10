@@ -78,14 +78,21 @@ body {
     background-color:rgb(233, 233, 233);
 }
 
-.nav-bar h4 {
+.nav-bar ul {
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
     color: rgb(41, 171, 225);
-    margin-top: 1rem;
     margin-bottom: .5rem;
-    margin-right: 7.15rem;
-    z-index: 1;
+}
+
+.quote {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(41, 171, 225);
+    background-color:rgb(233, 233, 233);
+    padding-bottom: 10px;
 }
 
 .states-container, .users-container {
