@@ -11,7 +11,7 @@
         Phone: <%= company.phone %><br>
         Email: <%= company.email %><br>
         Web: <%= company.website %><br>
-        Description: <%= company.description %><br>
+        Description:<br> <%= company.description %><br>
         <%= link_to "Delete", user_company_path(@user, company), method: :delete  %>
         <%= link_to "Edit", edit_user_company_path(@user, company) %>
       </p>

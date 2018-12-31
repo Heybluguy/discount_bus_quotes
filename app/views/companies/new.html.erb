@@ -11,11 +11,13 @@
         <div class='state-collection'><%= collection_select :company, :state_ids, State.all, :id, :name, {prompt: false}, {multiple: true} %></div>
       </div>
       <%= f.label           :phone %>
-      <%= f.text_field      :phone %>
+      <%= f.text_field      :phone, placeholder: "407-555-5555"   %>
+      <%= f.label           :address %>
+      <%= f.text_field      :address, placeholder: "1 N Orange ave, Orlando, FL, 31801"  %>
       <%= f.label           :email %>
-      <%= f.text_field      :email %>
+      <%= f.text_field      :email , placeholder: "example@mail.com"  %>
       <%= f.label           :website %>
-      <%= f.text_field      :website %>
+      <%= f.text_field      :website, placeholder: "www.example.com"  %>
       <%= f.label           :description %>
       <%= f.text_field      :description %>
       <%= label             :images, "Attach an Image" %><br />

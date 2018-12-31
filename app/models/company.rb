@@ -4,4 +4,5 @@ class Company < ApplicationRecord
   has_many :vehicles, dependent: :destroy
   has_many :company_states, dependent: :destroy
   has_many :states, through: :company_states
+  has_many :addresses
 end
