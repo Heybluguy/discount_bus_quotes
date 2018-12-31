@@ -1,10 +1,16 @@
+    <h3><%= @company.name %></h3>
 <div class='all-container'>
   <div class='single-container user-show' >
-    <h3><%= @company.name %></h3>
+    <div class='images-container'>
+      <% @company.images.each do |image| %>
+        <%= image_tag image.image.url, size: "400x350" %>
+      <% end %>
+    </div>
     <h4>Phone: <%= @company.phone %></h4>
     <h4>Email: <%= @company.email %></h4>
     <h4>Website: <%= @company.website %></h4>
-    <h4>Description: <%= @company.description %></h4>
+    <h4>Address:<br> <%= @company.address %></h4>
+    <h4>Description:<br> <%= @company.description %></h4>
     <% if @company.states.any? %>
       <h4>Locations:</h4>
       <% @company.states.each do |state| %>
@@ -12,16 +18,11 @@
       <% end %>
     <% end %>
     <% if current_user && (current_user.admin? || current_user.id == @company.user.id) %>
-      <br><%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %><br>
+      <%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %>
       <% if current_user && current_user.default? %>
-        <%= link_to "Edit", edit_user_company_path(@company.user, @company) %><br>
+        <%= link_to "Edit", edit_user_company_path(@company.user, @company) %>
       <% end %>
     <% end %>
-    <div class='images-container'>
-      <% @company.images.each do |image| %>
-        <%= image_tag image.image.url, size: "200x150" %>
-      <% end %>
-    </div>
   </div>
 </div>
 
