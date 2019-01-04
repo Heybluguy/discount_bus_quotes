@@ -17,4 +17,4 @@
 /yarn-error.log
 
 .byebug_history
-/config/initializers/.geocoder.rb
+/config/initializers/geocoder.rb
