@@ -1,6 +1,7 @@
-    <h3><%= @company.name %></h3>
+<h3><%= @company.name %></h3>
 <div class='all-container'>
   <div class='single-container user-show' >
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@company.latitude},#{@company.longitude}&markers=#{@company.latitude},#{@company.longitude}&zoom=10&size=400x400&key=AIzaSyADsT9Nhm19w8-_t1x_mA3NLNmRCmHq7cs" %>
     <div class='images-container'>
       <% @company.images.each do |image| %>
         <%= image_tag image.image.url, size: "400x350" %>
@@ -10,6 +11,7 @@
     <h4>Email: <%= @company.email %></h4>
     <h4>Website: <%= @company.website %></h4>
     <h4>Address:<br> <%= @company.address %></h4>
+    <h4>Coordinates: <%= @company.latitude %> <%= @company.longitude %></h4>
     <h4>Description:<br> <%= @company.description %></h4>
     <% if @company.states.any? %>
       <h4>Locations:</h4>
@@ -17,6 +19,14 @@
           <%= state.name %></br>
       <% end %>
     <% end %>
+
+    <h3>Nearby companies</h3>
+    <ul>
+    <% for company in @company.nearbys(10) %>
+      <li><%= link_to company.address, company %> (<%= company.distance.round(2) %> miles)</li>
+    <% end %>
+    </ul>
+
     <% if current_user && (current_user.admin? || current_user.id == @company.user.id) %>
       <%= link_to "Delete", user_company_path(@company.user, @company), method: :delete  %>
       <% if current_user && current_user.default? %>
