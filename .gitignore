@@ -15,6 +15,6 @@
 
 /node_modules
 /yarn-error.log
-.config
+/config
 
 .byebug_history
