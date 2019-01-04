@@ -18,3 +18,4 @@
 
 .byebug_history
 /config/initializers/geocoder.rb
+show.html.erb*
