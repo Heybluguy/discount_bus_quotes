@@ -306,6 +306,43 @@ input[type=submit]:hover {
     border-radius: 10%;
 }
 
+.search-form {
+    width:50%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.search-form form {
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-form p {
+    display: flex;
+}
+
+.search-form input[type=text]{
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: flex;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid rgb(41, 171, 225);
+}
+
+.search-form input[type=submit]{
+    width: 100px;
+    background-color: rgb(41, 171, 225);
+    color: rgb(228, 225, 255);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
 ul {
     float: left;
 }
@@ -335,6 +372,12 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.all-container .map-container {
+    position: absolute;
+    left: 15px;
+    margin: 15px;
 }
 
 body {

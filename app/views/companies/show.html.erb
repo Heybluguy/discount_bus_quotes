@@ -1,10 +1,12 @@
 <h3><%= @company.name %></h3>
 <div class='all-container'>
+<div class='map-container'>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@company.latitude},#{@company.longitude}&markers=#{@company.latitude},#{@company.longitude}&zoom=10&size=300x300&sensor=false&key=AIzaSyADsT9Nhm19w8-_t1x_mA3NLNmRCmHq7cs" %>
+</div>
   <div class='single-container user-show' >
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@company.latitude},#{@company.longitude}&markers=#{@company.latitude},#{@company.longitude}&zoom=10&size=400x400&key=AIzaSyADsT9Nhm19w8-_t1x_mA3NLNmRCmHq7cs" %>
     <div class='images-container'>
       <% @company.images.each do |image| %>
-        <%= image_tag image.image.url, size: "400x350" %>
+        <%= image_tag image.image.url, size: "300x250" %>
       <% end %>
     </div>
     <h4>Phone: <%= @company.phone %></h4>

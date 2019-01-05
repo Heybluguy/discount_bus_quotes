@@ -4,8 +4,7 @@
   <% @state.companies.each do |company| %>
     <div class='state-container'>
       <div>
-        <%= link_to company.name, user_company_path(company.user, company) %>
-</br><br>
+        <p><%= link_to company.name, user_company_path(company.user, company) %></p>
       </div>
       <div>
         Description: <%= company.description %>

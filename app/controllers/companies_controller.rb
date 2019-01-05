@@ -19,8 +19,12 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @companies = current_user.companies
+    if params[:search].present?
+      @companies = Company.near(params[:search], 20, :order => :distance)
+    else
+      @user = current_user
+      @companies = current_user.companies
+    end
   end
 
   def edit
